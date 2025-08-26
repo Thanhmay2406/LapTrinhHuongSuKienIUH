@@ -139,39 +139,40 @@ public class Bai3_CongTruNhanChia extends JFrame implements ActionListener {
 		// TODO Auto-generated method stub
 		Object obj = e.getSource();
 		
-		double x1 = 0, x2 = 0;
-		String s1 = inp1.getText(), s2 = inp2.getText();
-		
-		if (s1.equals("")) {
-			JOptionPane.showMessageDialog(this, "Bạn chưa nhập A");
-			inp1.requestFocus();
-		}
-		else {
-			if (s2.equals("")) {
-				JOptionPane.showMessageDialog(this, "Bạn chưa nhập B");
-			}
-			else {
-				try {
-					x1 = Double.parseDouble(s1);
-				}
-				catch (Exception ex) {
-					JOptionPane.showMessageDialog(this, "Nhập sai định dạng");
-					inp1.selectAll();
-					inp1.requestFocus();
-				}
-				
-				try {
-					x2 = Double.parseDouble(s2);
-				}
-				catch (Exception ex) {
-					// TODO: handle exception
-					JOptionPane.showMessageDialog(this, "Nhập sai định dạng");
-					inp2.requestFocus();
-				}
-			}
-		}
 		
 		if (obj.equals(btnCal)) {
+			double x1 = 0, x2 = 0;
+			String s1 = inp1.getText(), s2 = inp2.getText();
+			
+			if (s1.equals("")) {
+				JOptionPane.showMessageDialog(this, "Bạn chưa nhập A");
+				inp1.requestFocus();
+			}
+			else {
+				if (s2.equals("")) {
+					JOptionPane.showMessageDialog(this, "Bạn chưa nhập B");
+				}
+				else {
+					try {
+						x1 = Double.parseDouble(s1);
+					}
+					catch (Exception ex) {
+						JOptionPane.showMessageDialog(this, "Nhập sai định dạng");
+						inp1.selectAll();
+						inp1.requestFocus();
+					}
+					
+					try {
+						x2 = Double.parseDouble(s2);
+					}
+					catch (Exception ex) {
+						// TODO: handle exception
+						JOptionPane.showMessageDialog(this, "Nhập sai định dạng");
+						inp2.selectAll();
+						inp2.requestFocus();
+					}
+				}
+			}
 			if (cong.isSelected()) {
 				output.setText("" + (x1 + x2));
 			}
